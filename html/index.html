@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://iconarchive.com/download/i110144/goescat/macaron/atom.ico" type="image/x-icon">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo{
+            padding: 20px 0px;
+        }
+        footer{
+            background-color: blue;
+            font-size: 20px;
+            color: white;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href wm-nav="exercicios/teste.html">00 - Teste</a>
+        <a href wm-nav="exercicios/texto1.html">01 - Texto</a>
+        <a href wm-nav="exercicios/texto2.html">02 - Texto2</a>
+        <a href wm-nav="exercicios/listas.html">03 - exercicio3</a>
+        <a href wm-nav="exercicios/listaAninhada.html">04 - Lista Aninhada</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer><br> Curso de Web Moderno</footer>
+
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+            link.onclick = function (e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav'))
+                    .then (resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>
