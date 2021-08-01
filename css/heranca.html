@@ -4,8 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Herança</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald">
     <style>
-        /* ... */
+        /* Algumas proprierdades são herdadas por padrão ou outras não*/
+        body{
+            font-size: 40px;
+            border: solid 3px red;
+            padding: 50px;
+            font-family: 'Oswald', Arial;
+        }
+
+        div {
+            border:inherit; /* Herdando propriedade do pai*/
+            padding: inherit;
+        }
     </style>
 </head>
 
