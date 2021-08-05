@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        html, body{
+            height: 100%;
+        }
         body {
             font-size: 40px;
             background-color: coral;
@@ -16,6 +19,12 @@
 
         span {
             background-color: dodgerblue;
+        }
+        span, div{
+            width: 50%;
+            height: 250px;
+            height: 50%; /* A porcetagem é em relação ao parents do componente*/
+            display: block;
         }
     </style>
 </head>
