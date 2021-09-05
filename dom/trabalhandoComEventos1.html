@@ -5,13 +5,67 @@
     <meta charset='UTF-8'>
     <title>Trabalhando com Eventos #01</title>
     <link rel='stylesheet' href='css/estilo.css'>
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .temporizador{
+            border-radius: 50px;            
+        }
+    </style>
 </head>
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- onclick="navegarEm5s(event)" -->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        let cron
+        let millisecond = 0
+        let millisecond2 = 1000       
+        let second = 5
+
+        function navegarEm5s(e) {
+            e.preventDefault()
+            clearInterval(cron)
+            start()
+            div.style.display = 'block'
+            setTimeout(() => {
+                clearInterval(cron)
+                // window.location.href = e.target.href
+            }, 5000)
+        }
+
+        function start() {
+            clearInterval(cron)
+            cron = setInterval(() => {
+                const p = document.querySelector('p')
+
+                if ((millisecond += 10) == 1000){
+                    millisecond = 0
+                    second--
+                }
+                if((millisecond2-=10) == 0) {millisecond2 = 1000}
+                p.innerHTML = `${second}: ${(millisecond2/100).toFixed(0)}`
+                // p.innerHTML = second
+
+            }, 10);
+        }
+
+
+        const a = document.querySelector('[espera-um-pouco]')
+        a.onclick = navegarEm5s
+
+        const div = document.createElement('div')
+        const p = document.createElement('p')
+        div.classList.add('temporizador')
+        div.appendChild(p)
+        div.style.display='none'        
+
+        const body = document.querySelector('body')
+        body.appendChild(div)
     </script>
 </body>
