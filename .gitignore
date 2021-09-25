@@ -1,5 +1,7 @@
 .vscode/launch.json
 .gitignore
-# ajax/node_modules/
-# gulp/node_modules/
+ajax/node_modules/
+gulp/node_modules/
+gulp/spa/node_modules
 */node_modules/
+gitignore
