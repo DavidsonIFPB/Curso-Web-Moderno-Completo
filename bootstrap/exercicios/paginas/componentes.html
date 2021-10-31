@@ -16,6 +16,26 @@
 <hr>
 
 <!-- Botões -->
+<button class="btn btn-primary">Salvar</button>
+<button class="btn btn-secondary">Cancelar</button>
+<button class="btn btn-outline-success">Finalizar</button>
+<button class="btn btn-danger" disabled>Excluir</button>
+<button class="btn btn-warning" data-toogle="button">Selecione</button>
+
+<div class="btn-group mt-3 mb-3">
+    <button botao-js class="btn btn-info">Esquerda</button>
+    <button botao-js class="btn btn-info active">Centro</button>
+    <button botao-js class="btn btn-info">Direita</button>
+    
+</div>
+
+<div class="dropdown">
+    <button class="btn btn-outline-success btn-lg dropdown-toggle" data-toggle="dropdown">Comprar! </button>
+    <div class="dropdown-menu">
+        <a href="#" class="dropdown-item">Paypal</a>
+        <a href="#" class="dropdown-item">Pagseguro</a>
+    </div>
+</div>
 
 <h1 class="mt-5">2. Progresso -
     <small>
@@ -72,5 +92,16 @@
 <!-- Accordion -->
 
 <script>
-    // ...
+    const botao = $('[botao-js]')
+    function removeClasse(elementos){
+        $(elementos).each(function(index, elemento){
+        const classAtivo = $(elemento).hasClass('active')
+        classAtivo ? $(elemento).removeClass('active') : null
+        return this
+        })
+    }
+    botao.click( function () {
+        removeClasse(botao)
+        $(this).addClass('active')
+    })
 </script>
