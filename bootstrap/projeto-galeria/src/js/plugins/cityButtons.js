@@ -26,15 +26,25 @@ $.fn.cityButtons = function () {
     })
 
     const btns = Array.from(cities).map(city => {
-        const btn = $('<button>')
-            .addClass(['btn', 'btn-info']).html(city)
-        btn.click(e => filterByCity(city))
+        // const btn = $('<button>')
+        //     .addClass(['btn', 'btn-info']).html(city)
+        const btn = $('<button class="btn btn-info" botao-active></button>').html(city)
+        btn.click(function() {
+            filterByCity(city)
+            $('button').removeClass('active')
+            $(this).addClass('active')
+        })
         return btn
     })
 
-    const btnAll = $('<button>')
-        .addClass(['btn', 'btn-info', 'active']).html('Todas')
-    btnAll.click(e => filterByCity(null))
+    // const btnAll = $('<button>')
+    //     .addClass(['btn', 'btn-info', 'active']).html('Todas')
+    const btnAll = $('<button class="btn btn-info active" botao-active></button>').html('Todas')
+    btnAll.click(function() {
+            filterByCity(null)
+            $('[botao-active]').removeClass('active')
+            $(this).addClass('active')
+        })
     btns.push(btnAll)
 
     const btnGroup = $('<div>').addClass(['btn-group'])
