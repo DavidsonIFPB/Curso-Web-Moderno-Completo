@@ -4,7 +4,13 @@ export default class Saudacao extends Component {
     state = { nome: this.props.nome,
             tipo: this.props.tipo}
 
-     setTipo(e) {
+    constructor(props ){
+        
+        super(props)
+
+        this.setTipo = this.setTipo.bind(this)
+    }
+    setTipo(e) {
         this.setState({ tipo: e.target.value })
     }
 
@@ -21,13 +27,13 @@ export default class Saudacao extends Component {
                 <h1>{tipo} {nome}!</h1>
                 <hr />
 
-                <select name="tipo" onChange={(e)=>this.setTipo(e) } >
+                <select name="tipo" onChange={this.setTipo} >
                     <option value="">Selecione</option>
                     <option value="Bom dia">Bom dia</option>
                     <option value="Boa Tarde">Boa Tarde</option>
                     <option value="Boa Noite">Boa Noite</option>
                 </select>
-                
+
                 <input type="text" placeholder="Nome..." value={nome} onChange={(e)=>this.setNome(e) }/>                
                 {/* <input type="text" placeholder="Tipo..." value={tipo} onChange={(e)=>this.setTipo(e) } /> */}
 
