@@ -1,5 +1,7 @@
 import React from "react";
 
+import './App.css'
+
 import Logo from '../componentes/template/Logo'
 import Nav from '../componentes/template/Nav'
 import Main from '../componentes/template/Main'
