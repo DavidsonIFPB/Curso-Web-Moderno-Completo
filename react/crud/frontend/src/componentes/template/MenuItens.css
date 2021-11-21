@@ -6,6 +6,10 @@
     padding: 15px;
 }
 
+.menu a >i{
+    margin-right: 5px;
+}
+
 .menu a:hover{
     background: linear-gradient(135deg, #07a7e3 20%, #32dac3 80%);
 }
