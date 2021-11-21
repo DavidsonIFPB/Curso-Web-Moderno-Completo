@@ -57,6 +57,10 @@ footer.footer{
     grid-area: footer;
 }
 
+main.content .btn-danger{
+    margin-left: 5px;
+}
+
 @media(max-width: 768px) {
     .app {
         grid-template-rows:
@@ -86,5 +90,13 @@ footer.footer{
             "menu"
             "content"
             "footer";
+    }
+    
+}
+
+@media(max-width: 576px){
+    main.content .btn-danger{
+        margin-top: 5px;
+        margin-left: 0px;
     }
 }
