@@ -1,0 +1,11 @@
+.menu a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    padding: 15px;
+}
+
+.menu a:hover{
+    background: linear-gradient(135deg, #07a7e3 20%, #32dac3 80%);
+}
