@@ -3,4 +3,6 @@
     margin: 10px;
     border-radius: 8px;
     cursor: pointer;
+    width: 170px;
+    text-align: center;
 }
