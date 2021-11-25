@@ -6,7 +6,7 @@ export default function ClientePorCodigo() {
     return(
         <Layout>
             <div>Codigo {router.query.codigo}</div>
-            <div>Filial {router.query.filial.toUpperCase()}</div>
+            <div>Filial {router.query.filial}</div>
         </Layout>
     )
 }
