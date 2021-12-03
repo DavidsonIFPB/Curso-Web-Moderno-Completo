@@ -9,19 +9,19 @@ export default class Cliente {
         this.#id = id
     }
 
-    static vazio(){
+    static vazio() {
         return new Cliente('', 0)
     }
 
-    get id(){
+    get id() {
         return this.#id
     }
 
-    get nome(){
+    get nome() {
         return this.#nome
     }
-    
-    get idade(){
+
+    get idade() {
         return this.#idade
     }
 }
