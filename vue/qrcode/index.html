@@ -10,9 +10,27 @@
 </head>
 
 <body>
+    <div id="app">
+        <h1>{{ titulo }}</h1>
+        <input v-model="text" size="25" placeholder="Digite para gerar...">
 
+        <div v-if="text" class="output"> <img :src="newQRcode" alt="QRCode"></div>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Gerador de QRcode',
+                text: 'https://www.cod3r.com.br',
+                qrcode: new QRious({ size: 300 })
+            },
+            computed: {
+                newQRcode(){
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                }
+            }
+        })
     </script>
 </body>
 
