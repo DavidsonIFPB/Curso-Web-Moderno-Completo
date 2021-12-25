@@ -8,3 +8,4 @@ bootstrap/exercicios/node_modules
 spa-webpack
 gitignore
 */**/node_modules
+/most-used-words/Legendas
