@@ -1,6 +1,8 @@
 .header{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-color);
 
 }
 
@@ -17,6 +19,8 @@
 
 .header .title-group {
     padding-left: 25px;
+    color: #fff;
+    
 }
 .header .title-group i {
     padding-right: 5px;
