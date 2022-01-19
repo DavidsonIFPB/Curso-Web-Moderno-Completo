@@ -10,3 +10,4 @@ gitignore
 */**/node_modules
 /most-used-words/Legendas
 Angular-Crud/backend/db.json
+Angular-Crud/frontend/.angular/**/*
