@@ -7,18 +7,15 @@ module.exports = app => {
     })
 
     const get = (req, res) => {
-        Stat.findOne({}, {}, { sort: { 'createAt': -1 } })
+        Stat.findOne({}, {}, { sort: { 'createdAt' : -1 } })
             .then(stat => {
                 const defaultStat = {
                     users: 0,
                     categories: 0,
                     articles: 0
                 }
-
-                return res.json(stat || defaultStat)
-            }
-
-            )
+                res.json(stat || defaultStat)
+            })
     }
 
     return { Stat, get }
