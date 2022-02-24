@@ -17,6 +17,7 @@ module.exports = app => {
         }
         catch (msg) {
             res.status(400).send(msg)
+            return
         }
 
         if (article.id) {
@@ -27,10 +28,12 @@ module.exports = app => {
                 .catch(err => res.status(500).send(err))
         }
 
-        else {
+        else {            
             app.db('articles')
                 .insert(article)
-                .then(_ => res.status(204).send())
+                .then(_ => {
+                    res.status(204).send()
+                })
                 .catch(err => res.status(500).send(err))
         }
 
