@@ -52,7 +52,7 @@
       </template>
     </b-table>
   
-    <b-pagination size="md" v-model="page" pills :total-rows="count" :per-page="limit"/>
+    <b-pagination class="mb-1" size="md" v-model="page" :total-rows="count" :per-page="limit"/>
 
   </div>
 </template>
@@ -154,5 +154,9 @@ export default {
 </script>
 
 <style>
+.ql-editor .ql-blank pre{
+  background-color: #ccc;
+  color: red;
+}
 
 </style>

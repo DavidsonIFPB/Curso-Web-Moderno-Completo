@@ -1,6 +1,7 @@
 import Vue from "vue"
 
 export const baseUrl = 'http://127.0.0.1:3000'
+export const userKey = '__knowledge_user'
 
 export function showError(e) {
     if( e && e.response && e.response.data){
@@ -16,4 +17,4 @@ export function showError(e) {
 
 }
 
-export default { baseUrl, showError}
+export default { baseUrl, showError, userKey}
